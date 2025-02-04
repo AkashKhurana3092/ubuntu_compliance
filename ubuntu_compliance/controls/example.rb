@@ -21,5 +21,20 @@ control 'user-01' do
   describe user('ubuntu') do
     it { should exist }
   end
+
+  describe user('abc') do
+    it { should exist }
+  end
 end
 
+# controls/user_test.rb
+
+control 'package-02' do
+  impact 1.0
+  title 'Verify if ubuntu package exists'
+  desc 'Ensure the user ubuntu is present on the system'
+
+  describe package('dummy') do
+    it { should be_installed }
+  end
+end
