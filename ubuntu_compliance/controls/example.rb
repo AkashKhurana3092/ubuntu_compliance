@@ -17,11 +17,12 @@ control 'user-01' do
   title 'Verify if ubuntu user exists'
   desc 'Ensure the user ubuntu is present on the system'
 
-  describe user('ubuntu') do
+  describe user('courier_admin') do
     it { should exist }
   end
+end
 
-  describe user('abc') do
+  describe user('inspec_admin') do
     it { should exist }
   end
 end
