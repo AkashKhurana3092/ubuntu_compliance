@@ -34,7 +34,7 @@ control 'package-02' do
   title 'Verify if ubuntu package exists'
   desc 'Ensure the user ubuntu is present on the system'
 
-  describe package('dummy') do
+  describe package('xclip') do
     it { should be_installed }
   end
 end
