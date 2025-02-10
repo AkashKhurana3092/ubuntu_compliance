@@ -20,7 +20,7 @@ control 'user-01' do
   describe user('courier_admin') do
     it { should exist }
   end
-end
+
 
   describe user('inspec_admin') do
     it { should exist }
