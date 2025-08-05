@@ -38,3 +38,16 @@ control 'package-02' do
     it { should be_installed }
   end
 end
+
+control "xccdf_org.cisecurity.benchmarks_rule_4.2.1.1.3_Ensure_systemd-journal-remote_is_enabled" do
+  title "Ensure systemd-journal-remote is enabled"
+  desc  "
+    Journald (via systemd-journal-remote ) supports the ability to send log events it gathers to a remote log host or to receive messages from remote hosts, thus enabling centralised log management.
+    
+    Rationale: Storing log data on a remote host protects log integrity from local attacks. If an attacker gains root access on the local system, they could tamper with or remove log data that is stored on the local system.
+  "
+  impact 0.0
+  describe service("systemd-journal-upload") do
+    it { should be_enabled }
+  end
+end
